@@ -54,8 +54,21 @@ if (candidateAnswer === correctAnswer) {
 
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+  let numCorrect = 0;
 
+for (let i = 0; i < candidateAnswers.length; i++) { //checks each answer against correct ans
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+    numCorrect++;
+  }
+}
+grade = (numCorrect / questions.length) * 100;
+  console.log(`Candidate Name: ${candidateName}`);
 
+for (let i = 0; i < questions.length; i++) {
+  console.log(`${i + 1}) ${questions[i]}`); //prints question 1 & iterates
+  console.log(`   Your Answer: ${candidateAnswers[i]}`); //prints candidate answer from Candidate Array
+  console.log(`   Correct Answer: ${correctAnswers[i]}`); //prints correct answer from CorrectAns Array
+}
   return grade;
 }
 
