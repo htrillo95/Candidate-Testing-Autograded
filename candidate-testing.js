@@ -30,7 +30,7 @@ let candidateAnswers = [];
 
 // TODO 1.1b: Ask for candidate's name //
 function askForName() {  
-  let candidateName = input.question("Enter your name: ");
+  candidateName = input.question("Enter your name: ");
 }
 
 // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
@@ -48,21 +48,27 @@ function gradeQuiz(candidateAnswers) {
 }
 
 //TODO 3.2 use this variable to calculate the candidates score.
-  let grade;  
-  let numCorrect = 0;
+  let grade;  //initialize variables
+  let numCorrect = 0; 
 
 for (let i = 0; i < candidateAnswers.length; i++) { //checks each answer against correct ans
   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-    numCorrect++;
+    numCorrect++; //numCorrect raises if answer matches
   }
 }
 grade = (numCorrect / questions.length) * 100;
   console.log(`Candidate Name: ${candidateName}`);
 
-for (let i = 0; i < questions.length; i++) {
+for (let i = 0; i < questions.length; i++)
+ { //loops through questions
   console.log(`${i + 1}) ${questions[i]}`); //prints question 1 & iterates
   console.log(`   Your Answer: ${candidateAnswers[i]}`); //prints candidate answer from Candidate Array
   console.log(`   Correct Answer: ${correctAnswers[i]}`); //prints correct answer from CorrectAns Array
+}
+if (grade >= 80) {
+  console.log(`Passed! Grade: ${grade}`);
+} else {
+  console.log(`Failed. Grade: ${grade}`);
 }
   return grade;
 }
