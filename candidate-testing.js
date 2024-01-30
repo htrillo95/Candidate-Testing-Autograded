@@ -1,7 +1,5 @@
 const input = require('readline-sync');
 
-// TODO 2: modify your quiz app to ask 5 questions //
-
 // TODO 1.1a: Define candidateName // 
 let candidateName = ("");
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
@@ -9,6 +7,7 @@ let question = ("Who was the first American woman in space? ");
 let correctAnswer = ("Sally Ride");
 let candidateAnswer = ("");
 
+// TODO 2: modify your quiz app to ask 5 questions //
 
 //TODO: Variables for Part 2
 let questions = [
@@ -29,31 +28,27 @@ let correctAnswers = [
 
 let candidateAnswers = [];
 
-
-function askForName() {
-  // TODO 1.1b: Ask for candidate's name //
-let candidateName = input.question("Enter your name: ");
-
+// TODO 1.1b: Ask for candidate's name //
+function askForName() {  
+  let candidateName = input.question("Enter your name: ");
 }
 
+// TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 function askQuestion() {
-  // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-let candidateAnswer = input.question(question);
-console.log(candidateAnswer);
-
+  let candidateAnswer = input.question(question);
+  console.log(candidateAnswer);
 }
 
+// TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 function gradeQuiz(candidateAnswers) {
-
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (candidateAnswer === correctAnswer) {
+  if (candidateAnswer === correctAnswer) {
   console.log("Correct!");
 } else {
   console.log ("Incorrect Answer");
 }
 
-
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+//TODO 3.2 use this variable to calculate the candidates score.
+  let grade;  
   let numCorrect = 0;
 
 for (let i = 0; i < candidateAnswers.length; i++) { //checks each answer against correct ans
